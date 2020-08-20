@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="./app.js"></script>
+    <title>Property & Distribution Services</title>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div id="header-bg"></div>
+            <a href="#"><img src="./img/HCC_logo.png" alt="HCC logo"></a>
+            <div id="logo-vertical-bar"></div>
+            <span id="logo-label">Property & Distribution Services</span>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <main>
+            <h1>Create a Ticket</h1>
+            <form action="./submit.php">
+                <section>
+                    <label for="service-type">Service Type</label>
+                    <select name="service-type" id="service-type">
+                        <option value="disposition">Property Disposition</option>
+                        <option value="requisition">Property Requisition</option>
+                        <option value="shred">Shred Bin Services</option>
+                    </select>
+                </section>
+            </form>
+        </main>
+    </div>
+    <img class="circle-gray" src="./img/circle-gray.png" alt="">
+    <img class="circle-yellow" src="./img/circle-yellow.png" alt="">
+</body>
+</html>

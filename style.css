@@ -1,0 +1,117 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: white;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+.container nav {
+  display: flex;
+  height: 5vh;
+  align-items: center;
+  background-color: white;
+  padding: 10px 0;
+}
+.container nav #header-bg {
+  position: absolute;
+  width: 100%;
+  height: 5vh;
+  top: 0;
+  left: 0;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
+  z-index: -1;
+}
+.container nav a {
+  height: 100%;
+}
+.container nav img {
+  height: 100%;
+}
+.container nav #logo-vertical-bar {
+  height: 80%;
+  width: 2px;
+  background-color: #05b36c;
+  margin: 0 10px;
+}
+.container nav #logo-label {
+  color: gray;
+  font-size: 14px;
+}
+.container nav ul {
+  list-style-type: none;
+  display: flex;
+  font-size: 14px;
+  font-weight: bold;
+  flex: 1;
+  justify-content: flex-end;
+}
+.container nav ul li {
+  padding: 0 20px;
+  text-align: right;
+}
+.container nav ul li a {
+  text-decoration: none;
+  color: #06357a;
+}
+.container main h1 {
+  text-align: center;
+  margin: 20px 0;
+  color: #54a4db;
+}
+.container main form section {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: fit-content;
+}
+.container main form section label {
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.25);
+  margin-bottom: 10px;
+}
+.container main form section input, .container main form section select {
+  font-family: "Montserrat", sans-serif;
+  font-size: 24px;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #222222;
+  padding: 5px 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  text-align: center;
+}
+
+.circle-gray {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 400px;
+  z-index: -2;
+}
+
+.circle-yellow {
+  position: absolute;
+  bottom: 200px;
+  left: 200px;
+  width: 300px;
+  z-index: -1;
+}
