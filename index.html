@@ -6,35 +6,126 @@
     <link rel="stylesheet" href="./style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <script src="./app.js"></script>
+    <script src="https://kit.fontawesome.com/1321544866.js" crossorigin="anonymous"></script>
     <title>Property & Distribution Services</title>
 </head>
 <body>
-    <div class="container">
-        <nav>
-            <div id="header-bg"></div>
-            <a href="#"><img src="./img/HCC_logo.png" alt="HCC logo"></a>
-            <div id="logo-vertical-bar"></div>
-            <span id="logo-label">Property & Distribution Services</span>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-        <main>
-            <h1>Create a Ticket</h1>
+    <nav>
+        <div id="header-bg"></div>
+        <a href="#"><img src="./img/HCC_logo.png" alt="HCC logo"></a>
+        <div id="logo-vertical-bar"></div>
+        <span id="logo-label">Property & Distribution Services</span>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="container">
             <form action="./submit.php">
                 <section>
-                    <label for="service-type">Service Type</label>
-                    <select name="service-type" id="service-type">
-                        <option value="disposition">Property Disposition</option>
-                        <option value="requisition">Property Requisition</option>
-                        <option value="shred">Shred Bin Services</option>
+                    <h2>INFO</h2>
+                    <label for="cmb-reason">Reason for Disposition</label>
+                    <select required name="cmb-reason" id="cmb-reason">
+                        <option value="" disabled selected hidden>Select an option</option>
+                        <option value="transfer">Transferring to a new location</option>
+                        <option value="request">Requesting from the warehouse</option>
+                        <option value="return">Returning to the warehouse</option>
+                        <option value="warranty">Warranty replacement</option>
+                        <option value="repair">Off-Site repair</option>
+                    </select>
+                    <label for="cmb-campus">Current Location of Property</label>
+                    <select required name="cmb-campus" id="cmb-campus">
+                        <option value="" disabled selected hidden>Select an option</option>
+                        <option value="dm">Dale Mabry</option>
+                        <option value="yb">Ybor</option>
+                        <option value="br">Brandon</option>
+                        <option value="pc">Plant City</option>
+                        <option value="gw">District Office</option>
+                        <option value="ss">South Shore</option>
                     </select>
                 </section>
+                <section>
+                    <h2>FROM</h2>
+                    <label for="from-name">Name</label>
+                    <input type="text" id="from-name">
+                    <label for="from-loc">Room</label>
+                    <input type="text" id="from-loc">
+                    <label for="from-phone">Phone</label>
+                    <input type="tel" id="from-phone">
+                    <label for="from-email">Email</label>
+                    <input type="email" id="from-email">
+                </section>
+                <section>
+                    <h2>TO</h2>
+                    <label for="to-name">Name</label>
+                    <input type="text" id="to-name">
+                    <label for="to-loc">Room</label>
+                    <input type="text" id="to-loc">
+                    <label for="to-phone">Phone</label>
+                    <input type="tel" id="to-phone">
+                    <label for="to-email">Email</label>
+                    <input type="email" id="to-email">
+                </section>
+                <section>
+                    <h2>PROPERTY</h2>
+                    <label for="type">Type</label>
+                    <input type="text" name="type">
+        
+                    <label for="condition">Condition</label>
+                    <input type="text" name="condition">
+        
+                    <label for="description">Description</label>
+                    <input type="text" name="description">
+        
+                    <label for="asset">Asset Number</label>
+                    <input type="text" name="asset">
+        
+                    <label for="serial">Serial Number</label>
+                    <input type="text" name="serial">
+                </section>
+                <section>
+                    <h2>SHIPPING</h2>
+                    <label for="tracking">Tracking Number</label>
+                    <input type="text" name="tracking">
+        
+                    <label for="po">PO Number</label>
+                    <input type="text" name="po">
+        
+                    <label for="carrier">Carrier</label>
+                    <input type="text" name="carrier">
+        
+                    <label for="queue">Queue</label>
+                    <input type="text" name="queue">
+        
+                    <label for="notes">Notes</label>
+                    <input type="text" name="notes">
+        
+                </section>
             </form>
-        </main>
-    </div>
+            <div class="cart">
+                <div class="cart-header">
+                    <h1>Cart</h1>
+                    <i class="fas fa-shopping-cart fa-lg"></i>
+                </div>
+                <div class="cart-body">
+                    <table>
+                        <tr>
+                            <th>Description</th>
+                            <th>Asset</th>
+                            <th>Serial</th>
+                        </tr>
+                        <tr>
+                            <td>OPTIPLEX 990</td>
+                            <td>83257</td>
+                            <td>D982H0F</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
     <img class="circle-gray" src="./img/circle-gray.png" alt="">
     <img class="circle-yellow" src="./img/circle-yellow.png" alt="">
 </body>
