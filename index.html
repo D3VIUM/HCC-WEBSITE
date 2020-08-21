@@ -26,82 +26,92 @@
             <form action="./submit.php">
                 <section>
                     <h2>INFO</h2>
-                    <label for="cmb-reason">Reason for Disposition</label>
-                    <select required name="cmb-reason" id="cmb-reason">
-                        <option value="" disabled selected hidden>Select an option</option>
-                        <option value="transfer">Transferring to a new location</option>
-                        <option value="request">Requesting from the warehouse</option>
-                        <option value="return">Returning to the warehouse</option>
-                        <option value="warranty">Warranty replacement</option>
-                        <option value="repair">Off-Site repair</option>
-                    </select>
-                    <label for="cmb-campus">Current Location of Property</label>
-                    <select required name="cmb-campus" id="cmb-campus">
-                        <option value="" disabled selected hidden>Select an option</option>
-                        <option value="dm">Dale Mabry</option>
-                        <option value="yb">Ybor</option>
-                        <option value="br">Brandon</option>
-                        <option value="pc">Plant City</option>
-                        <option value="gw">District Office</option>
-                        <option value="ss">South Shore</option>
-                    </select>
+                    <i class="fas fa-chevron-right"></i>
+                    <div class="input-body">
+                        <label for="cmb-reason">Reason for Disposition</label>
+                        <select required name="cmb-reason" id="cmb-reason">
+                            <option value="" disabled selected hidden>Select an option</option>
+                            <option value="transfer">Transferring to a new location</option>
+                            <option value="request">Requesting from the warehouse</option>
+                            <option value="return">Returning to the warehouse</option>
+                            <option value="warranty">Warranty replacement</option>
+                            <option value="repair">Off-Site repair</option>
+                        </select>
+                        <label for="cmb-campus">Current Location of Property</label>
+                        <select required name="cmb-campus" id="cmb-campus">
+                            <option value="" disabled selected hidden>Select an option</option>
+                            <option value="dm">Dale Mabry</option>
+                            <option value="yb">Ybor</option>
+                            <option value="br">Brandon</option>
+                            <option value="pc">Plant City</option>
+                            <option value="gw">District Office</option>
+                            <option value="ss">South Shore</option>
+                        </select>
+                    </div>
                 </section>
                 <section>
                     <h2>FROM</h2>
-                    <label for="from-name">Name</label>
-                    <input type="text" id="from-name">
-                    <label for="from-loc">Room</label>
-                    <input type="text" id="from-loc">
-                    <label for="from-phone">Phone</label>
-                    <input type="tel" id="from-phone">
-                    <label for="from-email">Email</label>
-                    <input type="email" id="from-email">
+                        <div class="input-body">
+                        <label for="from-name">Name</label>
+                        <input type="text" id="from-name">
+                        <label for="from-loc">Room</label>
+                        <input type="text" id="from-loc">
+                        <label for="from-phone">Phone</label>
+                        <input type="tel" id="from-phone">
+                        <label for="from-email">Email</label>
+                        <input type="email" id="from-email">
+                    </div>
                 </section>
                 <section>
                     <h2>TO</h2>
-                    <label for="to-name">Name</label>
-                    <input type="text" id="to-name">
-                    <label for="to-loc">Room</label>
-                    <input type="text" id="to-loc">
-                    <label for="to-phone">Phone</label>
-                    <input type="tel" id="to-phone">
-                    <label for="to-email">Email</label>
-                    <input type="email" id="to-email">
+                    <div class="input-body">
+                        <label for="to-name">Name</label>
+                        <input type="text" id="to-name">
+                        <label for="to-loc">Room</label>
+                        <input type="text" id="to-loc">
+                        <label for="to-phone">Phone</label>
+                        <input type="tel" id="to-phone">
+                        <label for="to-email">Email</label>
+                        <input type="email" id="to-email">
+                    </div>
                 </section>
                 <section>
                     <h2>PROPERTY</h2>
-                    <label for="type">Type</label>
-                    <input type="text" name="type">
-        
-                    <label for="condition">Condition</label>
-                    <input type="text" name="condition">
-        
-                    <label for="description">Description</label>
-                    <input type="text" name="description">
-        
-                    <label for="asset">Asset Number</label>
-                    <input type="text" name="asset">
-        
-                    <label for="serial">Serial Number</label>
-                    <input type="text" name="serial">
+                    <div class="input-body">
+                        <label for="type">Type</label>
+                        <input type="text" name="type">
+            
+                        <label for="condition">Condition</label>
+                        <input type="text" name="condition">
+            
+                        <label for="description">Description</label>
+                        <input type="text" name="description">
+            
+                        <label for="asset">Asset Number</label>
+                        <input type="text" name="asset">
+            
+                        <label for="serial">Serial Number</label>
+                        <input type="text" name="serial">
+                    </div>
                 </section>
                 <section>
                     <h2>SHIPPING</h2>
-                    <label for="tracking">Tracking Number</label>
-                    <input type="text" name="tracking">
-        
-                    <label for="po">PO Number</label>
-                    <input type="text" name="po">
-        
-                    <label for="carrier">Carrier</label>
-                    <input type="text" name="carrier">
-        
-                    <label for="queue">Queue</label>
-                    <input type="text" name="queue">
-        
-                    <label for="notes">Notes</label>
-                    <input type="text" name="notes">
-        
+                    <div class="input-body">
+                        <label for="tracking">Tracking Number</label>
+                        <input type="text" name="tracking">
+            
+                        <label for="po">PO Number</label>
+                        <input type="text" name="po">
+            
+                        <label for="carrier">Carrier</label>
+                        <input type="text" name="carrier">
+            
+                        <label for="queue">Queue</label>
+                        <input type="text" name="queue">
+            
+                        <label for="notes">Notes</label>
+                        <input type="text" name="notes">
+                    </div>
                 </section>
             </form>
             <div class="cart">

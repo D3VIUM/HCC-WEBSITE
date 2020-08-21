@@ -104,20 +104,36 @@ main {
             flex: 1;
             overflow-y: scroll;
 
-
             section {
-                display: flex;
-                flex-direction: column;
+
+                .input-body {
+                    max-height: 0;
+                    overflow: hidden;
+                    display: flex;
+                    flex-direction: column;
+                    transition: all 0.7s ease;
+
+                    &.open {
+                        max-height: 500px;
+                    }
+                }
 
                 & + section {
-                    margin-top: 40px;
-                    padding-top: 40px;
-                    border-top: 1px solid $green;
+                    margin-top: 20px;
+                    padding-top: 20px;
+                    border-top: 1px solid $gray;
                 }
 
                 h2 {
                     color: $navy;
-                    margin-bottom: 40px;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+
+                i {
+                    float: right;
                 }
 
                 label {
@@ -126,7 +142,7 @@ main {
                     font-weight: 600;
                     color: rgba(0,0,0,0.25);
                     margin-bottom: 10px;
-
+                    margin-top: 20px;
                 }
 
                 input, select {
@@ -137,10 +153,6 @@ main {
                     padding: 10px;
                     background-color: rgb(250, 246, 246);
                     border-radius: 10px;
-
-                    & + label {
-                        margin-top: 20px;
-                    }
                 }
 
                 select:invalid {
@@ -169,20 +181,28 @@ main {
 
             .cart-body {
                 
+                background-color: white;
+                padding: 10px;
+                border-radius: 10px;
+
                 table {
                     text-align: left;
                     width: 100%;
                     border-collapse: collapse;
 
-                    th {
-                        color: gray;
-                    }
-
                     tr {
-                        background-color: white;
                         border-radius: 10px;
                         color: black;
                         height: 2em;
+                    }
+
+                    th {
+                        color: gray;
+                        font-weight: 100;
+                    }
+
+                    td {
+
                     }
                 }
             }

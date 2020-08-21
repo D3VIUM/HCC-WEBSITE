@@ -1,12 +1,9 @@
-async function test(){
+window.onload = () => {
+    const input_headings = window.document.querySelectorAll("form section h2");
 
-    const para = document.querySelector('.test');
-
-    let response = await fetch('http://www.notifii.com', {mode: 'cors'});
-
-    if(response.ok) {
-        let json = await response.text();
-    } else {
-        alert("Error: " + response.status);
+    for (let i = 0; i < input_headings.length - 1; i++){
+        input_headings[i].addEventListener("click", () => {
+            input_headings[i].nextElementSibling.classList.toggle("open");
+        });
     }
 }
