@@ -23,6 +23,7 @@ nav {
   align-items: center;
   background-color: white;
   padding: 10px 10%;
+  z-index: 100;
 }
 nav #header-bg {
   position: absolute;
@@ -42,7 +43,7 @@ nav img {
 nav #logo-vertical-bar {
   height: 80%;
   width: 2px;
-  background-color: #05b36c;
+  background-color: #71e27a;
   margin: 0 10px;
 }
 nav #logo-label {
@@ -58,54 +59,118 @@ nav ul {
   justify-content: flex-end;
 }
 nav ul li {
-  padding: 0 20px;
+  padding-left: 40px;
   text-align: right;
 }
 nav ul li a {
   text-decoration: none;
-  color: #06357a;
+  color: #54a4db;
 }
 
-main {
-  margin-top: 10vh;
-}
 main .container {
-  margin: 0 10%;
+  margin: 10vh 10%;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .container .form-nav {
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
-  overflow: hidden;
-  height: 80vh;
+  background-color: #06357a;
+  min-width: 800px;
+}
+main .container .form-nav ul {
+  display: flex;
+  justify-content: space-around;
+}
+main .container .form-nav ul li {
+  list-style-type: none;
+}
+main .container .form-nav ul li button {
+  font-size: 18px;
+  padding: 0 20px;
+  height: 40px;
+  outline: none;
+  border: none;
+  color: gray;
+  background: none;
+  text-transform: uppercase;
+}
+main .container .form-nav ul li button:hover {
+  cursor: pointer;
+  color: #71e27a;
 }
 main .container form {
-  background-color: white;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .container form section {
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
+  position: absolute;
+  display: flex;
+  top: 0;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
   padding: 50px;
-  flex: 1;
-  overflow-y: scroll;
+  min-width: 800px;
+}
+main .container form section.hide-right {
+  left: 5000px;
+}
+main .container form section.hide-left {
+  left: -5000px;
 }
 main .container form section .input-body {
-  max-height: 0;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   transition: all 0.7s ease;
 }
-main .container form section .input-body.open {
-  max-height: 500px;
+main .container form section .input-body table {
+  border-spacing: 0;
+  table-layout: fixed;
 }
-main .container form section + section {
-  margin-top: 20px;
-  padding-top: 20px;
-  border-top: 1px solid #bdccd4;
+main .container form section .input-body table tr th {
+  padding: 20px 0 10px 0;
+  text-align: left;
+  color: rgba(0, 0, 0, 0.25);
+  text-transform: uppercase;
 }
-main .container form section h2 {
-  color: #06357a;
+main .container form section .input-body table tr td {
+  position: relative;
 }
-main .container form section h2:hover {
-  cursor: pointer;
+main .container form section .input-body table tr td .list-index {
+  position: absolute;
+  line-height: 50px;
+  vertical-align: middle;
+  left: 10px;
+  height: 100%;
+  color: rgba(0, 0, 0, 0.25);
 }
-main .container form section i {
-  float: right;
+main .container form section .input-body table tr td input, main .container form section .input-body table tr td select {
+  width: 100%;
+  height: 50px;
+  border-radius: 0;
+  max-width: 800px;
+  min-width: 0;
+}
+main .container form section .input-body table tr td input.first-column, main .container form section .input-body table tr td select.first-column {
+  padding-left: 30px;
+}
+main .container form section .input-footer {
+  display: flex;
+  width: 100%;
+  margin-top: 40px;
+  justify-content: space-between;
+}
+main .container form section .input-footer button {
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  background-color: #54a4db;
+  color: white;
 }
 main .container form section label {
   font-size: 16px;
@@ -113,7 +178,6 @@ main .container form section label {
   font-weight: 600;
   color: rgba(0, 0, 0, 0.25);
   margin-bottom: 10px;
-  margin-top: 20px;
 }
 main .container form section input, main .container form section select {
   font-family: "Montserrat", sans-serif;
@@ -123,45 +187,13 @@ main .container form section input, main .container form section select {
   padding: 10px;
   background-color: #faf6f6;
   border-radius: 10px;
+  max-width: 800px;
+  min-width: 500px;
 }
-main .container form section select:invalid {
-  color: gray;
+main .container form section input + label, main .container form section select + label {
+  margin-top: 40px;
 }
-main .container .cart {
-  flex: 1;
-  padding: 50px;
-  color: white;
-  background-color: #06357a;
-}
-main .container .cart .cart-header {
-  display: flex;
-  align-items: baseline;
-  justify-content: center;
-}
-main .container .cart .cart-header h1 {
-  text-align: center;
-  margin-right: 20px;
-  margin-bottom: 20px;
-}
-main .container .cart .cart-body {
-  background-color: white;
-  padding: 10px;
-  border-radius: 10px;
-}
-main .container .cart .cart-body table {
-  text-align: left;
-  width: 100%;
-  border-collapse: collapse;
-}
-main .container .cart .cart-body table tr {
-  border-radius: 10px;
-  color: black;
-  height: 2em;
-}
-main .container .cart .cart-body table th {
-  color: gray;
-  font-weight: 100;
-}
+
 .circle-gray {
   position: fixed;
   bottom: -100px;

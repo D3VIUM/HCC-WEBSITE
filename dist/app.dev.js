@@ -1,22 +1,21 @@
+"use strict";
 
-window.onload = () => {
-    propertyListAddRow();
+window.onload = function () {
+  propertyListAddRow();
+  var formSections = document.querySelectorAll("form section");
 
-    const formSections = document.querySelectorAll("form section");
+  for (var i = 1; i < formSections.length; i++) {
+    formSections[i].classList.add("hide-left");
+  }
+};
 
-    for (let i = 1; i < formSections.length; i++){
-        formSections[i].classList.add("hide-left");
-    }
-}
+function propertyListAddRow() {
+  var table = document.querySelector('.input-body table tbody');
+  var row;
 
-function propertyListAddRow(){
-    const table = document.querySelector('.input-body table tbody');
-    let row;
-
-    for (let i = 1; i <= 10; i++){
-        row = document.createElement("tr");
-        row.innerHTML = 
-        '<td><span class="list-index">' + i + '</span><input type="text" class="first-column" name="description[]"></td>\
+  for (var i = 1; i <= 10; i++) {
+    row = document.createElement("tr");
+    row.innerHTML = '<td><span class="list-index">' + i + '</span><input type="text" class="first-column" name="description[]"></td>\
         <td><input type="text" name="asset[]"></td>\
         <td><input type="text" name="serial[]"></td>\
         <td><input type="text" name="from[]"></td>\
@@ -29,8 +28,7 @@ function propertyListAddRow(){
             <option value="obsolete">Obsolete</option>\
             <option value="irreparable">Irreparable</option>\
             <option value="stolen">Stolen</option>\
-        </select></td>'
-
-        table.appendChild(row);
-    }
+        </select></td>';
+    table.appendChild(row);
+  }
 }

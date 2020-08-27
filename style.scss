@@ -2,6 +2,7 @@ $navy: #06357a;
 $gold: #b99c5f;
 $newblue: #001e60;
 $green: #05b36c;
+$green2: #71e27a;
 $blue1: #54a4db;
 $blue2: #00adcd;
 $pink: #e8246b;
@@ -35,6 +36,7 @@ nav {
     align-items: center;
     background-color: white;
     padding: 10px 10%;
+    z-index: 100;
 
     #header-bg {
         position: absolute;
@@ -58,7 +60,7 @@ nav {
     #logo-vertical-bar {
         height: 80%;
         width: 2px;
-        background-color: $green;
+        background-color: $green2;
         margin: 0 10px;
     }
 
@@ -76,64 +78,142 @@ nav {
         justify-content: flex-end;
 
         li {
-            padding: 0 20px;
+            padding-left: 40px;
             text-align: right;
 
             a {
                 text-decoration: none;
-                color: $navy;
+                color: $blue1;
             }
         }
     }
 }
 
 main {
-    margin-top: 10vh;
 
     .container {
-        margin: 0 10%;
+        margin: 10vh 10%;
         display: flex;
-        box-shadow: 0 0 10px 0 rgba(0,0,0,0.25);
-        border-radius: 10px;
-        overflow: hidden;
-        height: 80vh;
+        flex-direction: column;
+        align-items: center;
+
+        .form-nav {
+            box-shadow: 0 0 10px 0 rgba(0,0,0,0.25);
+            background-color: $navy;
+            min-width: 800px;
+            
+            ul {
+                display: flex;
+                justify-content: space-around;
+
+                li {
+                    list-style-type: none;
+
+                    button {
+                        font-size: 18px;
+                        padding: 0 20px;
+                        height: 40px;
+                        outline: none;
+                        border: none;
+                        color: gray;
+                        background: none;
+                        text-transform: uppercase;
+
+                        &:hover {
+                            cursor: pointer;
+                            color: $green2;
+                        }
+                    }
+                }
+            }
+        }
 
         form {
-            background-color: white;
-            padding: 50px;
-            flex: 1;
-            overflow-y: scroll;
-
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
             section {
+                box-shadow: 0 0 10px 0 rgba(0,0,0,0.25);
+                position: absolute;
+                display: flex;
+                top: 0;
+                flex-direction: column;
+                align-content: center;
+                align-items: center;
+                padding: 50px;
+                min-width: 800px;
+
+
+                &.hide-right {
+                    left: 5000px
+                }
+
+                &.hide-left {
+                    left: -5000px;
+                }
 
                 .input-body {
-                    max-height: 0;
                     overflow: hidden;
                     display: flex;
                     flex-direction: column;
                     transition: all 0.7s ease;
 
-                    &.open {
-                        max-height: 500px;
+                    table {
+                        border-spacing: 0;
+                        table-layout: fixed;
+
+                        tr {
+
+                            th {
+                                padding: 20px 0 10px 0;
+                                text-align: left;
+                                color: rgba(0,0,0,0.25);
+                                text-transform: uppercase;
+                            }
+
+                            td {
+                                position: relative;
+
+                                .list-index {
+                                    position: absolute;
+                                    line-height: 50px;
+                                    vertical-align: middle;
+                                    left: 10px;
+                                    height: 100%;
+                                    color: rgba(0,0,0,0.25);
+                                }
+
+                                input, select {
+                                    width: 100%;
+                                    height: 50px;
+                                    border-radius: 0;
+                                    max-width: 800px;
+                                    min-width: 0;
+
+                                    &.first-column {
+                                        padding-left: 30px;
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
 
-                & + section {
-                    margin-top: 20px;
-                    padding-top: 20px;
-                    border-top: 1px solid $gray;
-                }
+                .input-footer {
+                    display: flex;
+                    width: 100%;
+                    margin-top: 40px;
+                    justify-content: space-between;
 
-                h2 {
-                    color: $navy;
-
-                    &:hover {
-                        cursor: pointer;
+                    button {
+                        border: none;
+                        outline: none;
+                        padding: 10px 20px;
+                        background-color: $blue1;
+                        color: white;
                     }
-                }
-
-                i {
-                    float: right;
                 }
 
                 label {
@@ -142,7 +222,6 @@ main {
                     font-weight: 600;
                     color: rgba(0,0,0,0.25);
                     margin-bottom: 10px;
-                    margin-top: 20px;
                 }
 
                 input, select {
@@ -153,56 +232,11 @@ main {
                     padding: 10px;
                     background-color: rgb(250, 246, 246);
                     border-radius: 10px;
-                }
+                    max-width: 800px;
+                    min-width: 500px;
 
-                select:invalid {
-                    color: gray;
-                }
-            }
-        }
-
-        .cart {
-            flex: 1;
-            padding: 50px;
-            color: white;
-            background-color: $navy;
-
-            .cart-header {
-                display: flex;
-                align-items: baseline;
-                justify-content: center;
-
-                h1 {
-                    text-align: center;
-                    margin-right: 20px;
-                    margin-bottom: 20px;
-                }
-            }
-
-            .cart-body {
-                
-                background-color: white;
-                padding: 10px;
-                border-radius: 10px;
-
-                table {
-                    text-align: left;
-                    width: 100%;
-                    border-collapse: collapse;
-
-                    tr {
-                        border-radius: 10px;
-                        color: black;
-                        height: 2em;
-                    }
-
-                    th {
-                        color: gray;
-                        font-weight: 100;
-                    }
-
-                    td {
-
+                    & + label {
+                        margin-top: 40px;
                     }
                 }
             }

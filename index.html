@@ -23,10 +23,17 @@
     </nav>
     <main>
         <div class="container">
-            <form action="./submit.php">
+            <div class="form-nav">
+                <ul>
+                    <li><button>Info</button></li>
+                    <li><button>From</button></li>
+                    <li><button>To</button></li>
+                    <li><button>Property</button></li>
+                    <li><button>Notes</button></li>
+                </ul>
+            </div>
+            <form autocomplete="off" action="./submit.php">
                 <section>
-                    <h2>INFO</h2>
-                    <i class="fas fa-chevron-right"></i>
                     <div class="input-body">
                         <label for="cmb-reason">Reason for Disposition</label>
                         <select required name="cmb-reason" id="cmb-reason">
@@ -48,9 +55,12 @@
                             <option value="ss">South Shore</option>
                         </select>
                     </div>
+                    <div class="input-footer">
+                        <button>Prev</button>
+                        <button>Next</button>
+                    </div>
                 </section>
                 <section>
-                    <h2>FROM</h2>
                         <div class="input-body">
                         <label for="from-name">Name</label>
                         <input type="text" id="from-name">
@@ -63,7 +73,6 @@
                     </div>
                 </section>
                 <section>
-                    <h2>TO</h2>
                     <div class="input-body">
                         <label for="to-name">Name</label>
                         <input type="text" id="to-name">
@@ -76,26 +85,20 @@
                     </div>
                 </section>
                 <section>
-                    <h2>PROPERTY</h2>
                     <div class="input-body">
-                        <label for="type">Type</label>
-                        <input type="text" name="type">
-            
-                        <label for="condition">Condition</label>
-                        <input type="text" name="condition">
-            
-                        <label for="description">Description</label>
-                        <input type="text" name="description">
-            
-                        <label for="asset">Asset Number</label>
-                        <input type="text" name="asset">
-            
-                        <label for="serial">Serial Number</label>
-                        <input type="text" name="serial">
+                        <table>
+                            <tr>
+                                <th style="width: 25%">Description</th>
+                                <th style="width: 15%">Asset #</th>
+                                <th style="width: 15%">Serial #</th>
+                                <th style="width: 15%">From</th>
+                                <th style="width: 15%">To</th>
+                                <th style="width: 15%">Condition</th>
+                            </tr>
+                        </table>
                     </div>
                 </section>
                 <section>
-                    <h2>SHIPPING</h2>
                     <div class="input-body">
                         <label for="tracking">Tracking Number</label>
                         <input type="text" name="tracking">
@@ -114,26 +117,6 @@
                     </div>
                 </section>
             </form>
-            <div class="cart">
-                <div class="cart-header">
-                    <h1>Cart</h1>
-                    <i class="fas fa-shopping-cart fa-lg"></i>
-                </div>
-                <div class="cart-body">
-                    <table>
-                        <tr>
-                            <th>Description</th>
-                            <th>Asset</th>
-                            <th>Serial</th>
-                        </tr>
-                        <tr>
-                            <td>OPTIPLEX 990</td>
-                            <td>83257</td>
-                            <td>D982H0F</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
         </div>
     </main>
     <img class="circle-gray" src="./img/circle-gray.png" alt="">
