@@ -108,6 +108,9 @@ main .container form {
   position: relative;
   width: 100%;
 }
+main .container form h2 {
+  margin-bottom: 40px;
+}
 main .container form section {
   background-color: white;
   width: 100%;
@@ -139,6 +142,19 @@ main .container form section .input-body {
   display: flex;
   flex-direction: column;
   transition: all 0.7s ease;
+}
+main .container form section .input-body div.error {
+  padding-top: 5px;
+  color: red;
+  height: 0;
+  overflow: hidden;
+  transition: height 1s ease;
+}
+main .container form section .input-body div.error.show {
+  height: 100%;
+}
+main .container form section .input-body div.error + label {
+  margin-top: 40px;
 }
 main .container form section .input-body.property-list {
   overflow-y: scroll;

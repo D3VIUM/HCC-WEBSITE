@@ -34,9 +34,16 @@
             </div>
             <form autocomplete="off" action="./submit.php">
                 <section>
+                    <h2>Let's get started.</h2>
                     <div class="input-body">
+                        <label for="your-name">Your Name</label>
+                        <input type="text" data-validate="name">
+                        <div class="error"><span>First and last name required</span></div>
+                        <label for="your-email">Your Email</label>
+                        <input type="email">
+                        <div class="error"><span>Not a valid HCC email</span></div>
                         <label for="cmb-reason">Reason for Disposition</label>
-                        <select required name="cmb-reason" id="cmb-reason">
+                        <select name="cmb-reason" id="cmb-reason">
                             <option value="" disabled selected hidden>Select an option</option>
                             <option value="transfer">Transferring to a new location</option>
                             <option value="request">Requesting from the warehouse</option>
@@ -45,7 +52,7 @@
                             <option value="repair">Off-Site repair</option>
                         </select>
                         <label for="cmb-campus">Current Location of Property</label>
-                        <select required name="cmb-campus" id="cmb-campus">
+                        <select name="cmb-campus" id="cmb-campus">
                             <option value="" disabled selected hidden>Select an option</option>
                             <option value="dm">Dale Mabry</option>
                             <option value="yb">Ybor</option>
@@ -60,7 +67,8 @@
                     </div>
                 </section>
                 <section>
-                        <div class="input-body">
+                    <h2>Who is the contact for the pick up location?</h2>
+                    <div class="input-body">
                         <label for="from-name">Name</label>
                         <input type="text" id="from-name">
                         <label for="from-loc">Room</label>
@@ -76,6 +84,7 @@
                     </div>
                 </section>
                 <section>
+                    <h2>Who is the contact for the delivery location?</h2>
                     <div class="input-body">
                         <label for="to-name">Name</label>
                         <input type="text" id="to-name">
@@ -92,6 +101,7 @@
                     </div>
                 </section>
                 <section>
+                    <h2>Tell us about the property you want moved.</h2>
                     <div class="input-body property-list">
                         <table>
                             <tr>
