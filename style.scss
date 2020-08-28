@@ -19,6 +19,7 @@ $font: 'Montserrat', sans-serif;
 
 html {
     scroll-behavior: smooth;
+    overflow: hidden;
 }
 
 body {
@@ -100,7 +101,7 @@ main {
         .form-nav {
             box-shadow: 0 0 10px 0 rgba(0,0,0,0.25);
             background-color: $navy;
-            min-width: 800px;
+            width: 100%;
             
             ul {
                 display: flex;
@@ -118,9 +119,14 @@ main {
                         color: gray;
                         background: none;
                         text-transform: uppercase;
+                        transition: color 0.5s ease;
 
                         &:hover {
                             cursor: pointer;
+                            color: $green2;
+                        }
+
+                        &.selected {
                             color: $green2;
                         }
                     }
@@ -130,27 +136,33 @@ main {
 
         form {
             position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            width: 100%;
             
             section {
+                background-color: white;
+                width: 100%;
+                height: 80vh;
                 box-shadow: 0 0 10px 0 rgba(0,0,0,0.25);
                 position: absolute;
                 display: flex;
                 top: 0;
+                left: 50%;
+                transform: translateX(-50%);
                 flex-direction: column;
                 align-content: center;
                 align-items: center;
                 padding: 50px;
                 min-width: 800px;
-
+                opacity: 1;
+                transition: left 0.6s ease, opacity 0.3s ease-in;
 
                 &.hide-right {
+                    opacity: 0;
                     left: 5000px
                 }
 
                 &.hide-left {
+                    opacity: 0;
                     left: -5000px;
                 }
 
@@ -159,38 +171,50 @@ main {
                     display: flex;
                     flex-direction: column;
                     transition: all 0.7s ease;
+                    
+                    &.property-list {
+                    overflow-y: scroll;
+                    }
 
                     table {
                         border-spacing: 0;
                         table-layout: fixed;
+                        border-collapse: collapse;
+                        border: 1px solid rgba(0,0,0,0.25);
 
                         tr {
+                            border-collapse: collapse;
 
                             th {
-                                padding: 20px 0 10px 0;
+                                padding-bottom: 10px;
                                 text-align: left;
                                 color: rgba(0,0,0,0.25);
                                 text-transform: uppercase;
+                                border-top: 1px solid white;
+                                border-left: 1px solid white;
+                                border-right: 1px solid white;
                             }
 
                             td {
                                 position: relative;
+                                height: 100%;
+                                border: 1px solid rgba(0,0,0,0.25);
+                                border-collapse: collapse;
 
                                 .list-index {
                                     position: absolute;
-                                    line-height: 50px;
-                                    vertical-align: middle;
                                     left: 10px;
-                                    height: 100%;
+                                    bottom: 10px;
                                     color: rgba(0,0,0,0.25);
                                 }
 
                                 input, select {
                                     width: 100%;
-                                    height: 50px;
+                                    height: 100%;
                                     border-radius: 0;
                                     max-width: 800px;
                                     min-width: 0;
+                                    border: none;
 
                                     &.first-column {
                                         padding-left: 30px;
@@ -202,7 +226,7 @@ main {
                 }
 
                 .input-footer {
-                    display: flex;
+                    display: relative;
                     width: 100%;
                     margin-top: 40px;
                     justify-content: space-between;
@@ -213,6 +237,22 @@ main {
                         padding: 10px 20px;
                         background-color: $blue1;
                         color: white;
+                        width: 100px;
+                        border-radius: 5px;
+
+                        &.btn-prev {
+                            position: absolute;
+                            left: 50%;
+                            bottom: 25px;
+                            transform: translateX(-200%);
+                        }
+
+                        &.btn-next {
+                            position: absolute;
+                            right: 50%;
+                            bottom: 25px;
+                            transform: translateX(200%);
+                        }
                     }
                 }
 
@@ -249,7 +289,7 @@ main {
     bottom: -100px;
     left: -0;
     width: 40vh;
-    z-index: -2;
+    z-index: -1000;
 }
 
 .circle-yellow {
@@ -257,5 +297,5 @@ main {
     top: 20vh;
     left: -50px;
     width: 30vh;
-    z-index: -1;
+    z-index: -1000;
 }
